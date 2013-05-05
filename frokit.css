@@ -11,9 +11,9 @@
 .reset-all * 	{margin: 0; padding: 0;}
 
 /*     Layout     */
-.pfl	{float: left;}
-.pfr	{float: right;}
-.pfc 	{margin: 0 auto; float: none;}
+.fl	{float: left;}
+.fr	{float: right;}
+.fc 	{margin: 0 auto; float: none;}
 .fbl 	{width: 100%; display: block;}
 .sfbl	{width: 90%; padding: 0 5%;}
 

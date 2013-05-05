@@ -19,11 +19,11 @@ Do you want to reset all elements? only add `.reset-all` class on `<html>`
 ##Fast Layout
 
 It's simple.
-Pull Float left,right,center. `(pf + x)`
+Float left,right,center. `(f + x)`
 ```
-.pfl  {float: left;}
-.pfr	{float: right;}
-.pfc   {margin: 0 auto; float: none;}
+.fl  {float: left;}
+.fr	{float: right;}
+.fc   {margin: 0 auto; float: none;}
 ```
 Full block or semi full block.
 
