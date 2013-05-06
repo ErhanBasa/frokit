@@ -37,8 +37,8 @@ Just add `.bl + x`
 
 Example:
 ```
-<div class="bl1 pfl"><div class="bl9 pfr">
-<div class="bl3 pfl"><div class="bl5 pfl"><div class="bl4 pfr">
+<div class="bl1 fl"><div class="bl9 fr">
+<div class="bl3 fl"><div class="bl5 fl"><div class="bl4 fr">
 ```
 
 All Blocks:
