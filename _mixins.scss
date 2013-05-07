@@ -1,0 +1,92 @@
+//    
+//  Frokit Mixins;
+//	Author : Bilal Cinarli (bcinarli.com)
+//
+
+
+// blocks
+@mixin block($column) {
+	.bl#{$column} {
+		width: ($column * $block-width) + ($column - 1) * $block-gap;
+	}
+}
+
+// margins/paddings
+@mixin spacing($gap, $where: all, $spacing: margin){
+	$unitless: strip-units($gap);
+	$class: m;
+	
+	@if $spacing == padding {
+		$class: p;
+	}
+	
+	@if $where == all {
+		.#{$class}#{$unitless} {
+			#{$spacing}: $gap;
+		}
+	}
+	
+	@if $where == top {
+		.#{$class}t#{$unitless} {
+			#{$spacing}-top: $gap;
+		}
+	}
+	
+	@if $where == right {
+		.#{$class}r#{$unitless} {
+			#{$spacing}-right: $gap;
+		}
+	}
+
+	@if $where == bottom {
+		.#{$class}b#{$unitless} {
+			#{$spacing}-bottom: $gap;
+		}
+	}
+
+	@if $where == left {
+		.#{$class}l#{$unitless} {
+			#{$spacing}-left: $gap;
+		}
+	}
+}
+
+// radius
+@mixin radius($radii, $where: all) {
+	$unitless: strip-units($radii);
+
+	@if $where == all {
+		.brd#{$unitless} {
+			border-radius: $radii;
+		}
+	}
+	
+	@if $where == top {
+		.brdt#{$unitless} {
+			border-radius: $radii $radii 0 0;
+		}
+	}
+	
+	@if $where == right {
+		.brdr#{$unitless} {
+			border-radius: 0 $radii $radii 0 ;
+		}
+	}
+
+	@if $where == bottom {
+		.brdb#{$unitless} {
+			border-radius: 0 0 $radii $radii;
+		}
+	}
+
+	@if $where == left {
+		.brdl#{$unitless} {
+			border-radius: $radii 0 0 $radii;
+		}
+	}	
+}
+
+// remove units
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
