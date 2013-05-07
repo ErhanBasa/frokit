@@ -1,0 +1,130 @@
+/*     
+  Frokit;
+	Author : Erhan Basa (erhanbasa.com); 
+	Frokit Sass;
+	Author: Bilal Cinarli (bcinarli.com);
+*/
+
+@import "variables";
+@import "mixins";
+
+/*     Global Reset     */
+.reset-all {
+	margin: 0;
+	padding: 0;
+	
+	* {
+		@extend .reset-all;
+	}
+}
+
+
+/*     Layout     */
+.fl		{float: left;}
+.fr		{float: right;}
+.fc 	{margin: 0 auto; float: none;}
+.fbl 	{width: 100%; display: block;}
+.sfbl	{width: 90%; padding: 0 5%;}
+
+/*     Blocks     */
+@for $i from 1 through 12 {
+	@include block($i);
+}
+
+
+/*     Text Decoration     */
+.no-d {
+	text-decoration: none;
+	
+	a {
+		@extend .no-d;
+	}
+}
+
+
+/*     List Style     */
+.no-l li 			{list-style: none;}
+.no-ll li  			{float: left; list-style: none;}
+
+.no-lsm li {
+	list-style: none;
+	
+	a {
+		display: block;
+		border-top: 1px solid $border-color;
+		padding: 8px 0;
+		
+		&:first-child {
+			border-top: 0;
+		}
+	}
+}
+
+.no-llsm {
+	li {
+		float: left;
+		list-style: none;
+		
+		a {
+			display: block;
+			padding: 2px 8px;
+			border-left: 1px solid $border-color;
+		}
+		
+		&:first-child {
+			a {
+				border-left: 0;
+			}
+		}
+	}
+}
+
+
+/*     Text Align     */
+.tal 	{text-align: left;}
+.tar	{text-align: right;}
+.tac	{text-align: center;}
+
+
+/*     Margins     */
+@include spacing(0);
+
+$spacing: $gap;
+@while $spacing < 11 {
+	@include spacing($spacing);
+	@include spacing($spacing, top);
+	@include spacing($spacing, right);
+	@include spacing($spacing, bottom);
+	@include spacing($spacing, left);
+
+	$spacing: $spacing + 5;
+}
+
+
+/*     Paddings     */
+@include spacing(0, all, padding);
+
+$spacing: $gap;
+@while $spacing < 11 {
+	@include spacing($spacing, all, padding);
+	@include spacing($spacing, top, padding);
+	@include spacing($spacing, right, padding);
+	@include spacing($spacing, bottom, padding);
+	@include spacing($spacing, left, padding);
+
+	$spacing: $spacing + 5;
+}
+
+
+/*     Radius     */
+@include radius(0);
+
+@while $radii < 7 {
+	@include radius($radii);
+	@include radius($radii, top);
+	@include radius($radii, right);
+	@include radius($radii, bottom);
+	@include radius($radii, left);
+
+	$radii: $radii + 2;
+}
