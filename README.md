@@ -3,7 +3,7 @@ Frokit - Documentation
 
 ##About Creator
 Erhan Basa (erhanbasa.com)
-Front End Developer @DEV Internet
+Front End Developer
 
 ##Usage
 ```
